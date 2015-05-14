@@ -90,6 +90,4 @@ public class Valuta implements Serializable {
 				+ ", prodajni=" + prodajni + "]";
 	}
 
-	
-
 }

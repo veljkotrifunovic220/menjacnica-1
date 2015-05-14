@@ -2,7 +2,6 @@ package menjacnica;
 
 import java.util.LinkedList;
 
-
 public interface MenjacnicaInterface {
 	
 	public void dodajValutu(Valuta valuta);
