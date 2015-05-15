@@ -56,7 +56,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IzvrsiZamenuGUI(MenjacnicaGUI glavniProzor, Valuta valuta) {
+	public IzvrsiZamenuGUI(Valuta valuta) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(IzvrsiZamenuGUI.class.getResource("/icons/Screenshot.png")));
 		setTitle("Izvrsi zamenu");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -240,7 +240,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	}
 	
 	private void izvrsiZamenu(){
-		try{
+		try {
 			double konacniIznos = 
 					glavniProzor.sistem.izvrsiTransakciju(valuta,
 							rdbtnProdaja.isSelected(), 
@@ -248,8 +248,8 @@ public class IzvrsiZamenuGUI extends JFrame {
 		
 			textFieldKonacniIznos.setText(""+konacniIznos);
 		} catch (Exception e1) {
-		JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
+			JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
 				"Greska", JOptionPane.ERROR_MESSAGE);
-	}
+		}
 	}
 }
