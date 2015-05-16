@@ -15,6 +15,7 @@ public class GUIKontroler {
 	
 	private static MenjacnicaGUI glavniProzor;
 	private static MenjacnicaInterface menjacnica;
+	private static IzvrsiZamenuGUI izvrsiZamenuProzor;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -130,6 +131,17 @@ public class GUIKontroler {
 			menjacnica.obrisiValutu(valuta);
 			
 			glavniProzor.prikaziSveValute(menjacnica.vratiKursnuListu());
+		} catch (Exception e1) {
+			JOptionPane.showMessageDialog(glavniProzor.getContentPane(), e1.getMessage(),
+					"Greska", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
+	public static void izvrsiZamenu(Valuta valuta, boolean prodaja, double iznos){
+		try{
+			double konacniIznos = menjacnica.izvrsiTransakciju(valuta, prodaja, iznos);
+
+			izvrsiZamenuProzor.textFieldKonacniIznos.setText(""+konacniIznos);
 		} catch (Exception e1) {
 			JOptionPane.showMessageDialog(glavniProzor.getContentPane(), e1.getMessage(),
 					"Greska", JOptionPane.ERROR_MESSAGE);

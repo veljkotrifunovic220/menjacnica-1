@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
-import biblioteka.sistemskeOperacije.*;
+import menjacnica.sistemskeOperacije.*;
 
 public class Menjacnica implements MenjacnicaInterface{
 	
